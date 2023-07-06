@@ -1,3 +1,3 @@
-Jogo Mario Jump:
+<strong>Jogo Mario Jump:</stromg>
 
-Projeto de um joguinho simples com CSS, HTML E JS.
+<h1>Projeto de um joguinho simples com CSS, HTML E JS.</h1>
