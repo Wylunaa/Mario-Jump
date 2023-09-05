@@ -16,18 +16,23 @@ const jump =() =>
     }, 500);
 }
 
-const loop = setInterval(() =>{
+const loop = setInterval(() => {
 
     const pipePosition = pipe.offsetLeft;
+    const marioPosition = +window.getComputedStyle(mario).bottom.replace("px","");
     
-    if (pipePosition <= 120) {
+    console.log(marioPosition);
+    
+    if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 85) {
 
         pipe.style.animation = 'none';
         pipe.style.left = `${pipePosition}px`;
 
-        gameOver.currentTime = 0.1;
-        gameOver.volume = 0.2;
-        gameOver.play();
+        mario.src = "./images/game-over.png";
+        mario.style.width = "78px";
+        mario.style.margin = "43px"; 
+        
+        clearInterval(loop);
     }
 }, 10);
 document.addEventListener('keydown', jump);
